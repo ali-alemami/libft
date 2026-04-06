@@ -55,8 +55,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	free_string_array(char **str);
+void	free_split(char **str);
 char	**ft_strdup_2d(const char **str);
+
 typedef struct s_list
 {
 	void			*content;
