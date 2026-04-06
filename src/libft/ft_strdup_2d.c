@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 18:05:30 by aalemami          #+#    #+#             */
-/*   Updated: 2026/03/30 18:31:32 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/04/06 12:12:07 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**ft_strdup_2d(const char **str)
 	{
 		new_str[i] = ft_strdup(str[i]);
 		if (!new_str[i])
-			free_string_array(new_str);
+			free_split(new_str);
 		i++;
 	}
 	new_str[i] = NULL;
