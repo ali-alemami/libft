@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 02:44:47 by aalemami          #+#    #+#             */
-/*   Updated: 2026/04/22 14:45:59 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:21:01 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,33 @@ static int	get_size(char **arr)
 		i++;
 	return (i);
 }
+static char	**strdup_2d(char **new_arr, char **arr, char *new_str)
+{
+	int	i;
+
+	i = 0;
+	while (arr && arr[i])
+	{
+		new_arr[i] = ft_strdup(arr[i]);
+		if (!new_arr[i])
+		{
+			ft_free_split(new_arr);
+			ft_free_split(arr);
+			free(new_str);
+			return (NULL);
+		}
+		i++;
+	}
+	new_arr[i] = new_str;
+	new_arr[++i] = NULL;
+	ft_free_split(arr);
+	return (new_arr);
+}
 
 char	**ft_arr_push(char **arr, char *str)
 {
 	char	**new_arr;
 	char	*new_str;
-	int		i;
 
 	if (!str)
 		return (arr);
@@ -42,17 +63,8 @@ char	**ft_arr_push(char **arr, char *str)
 	if (!new_arr)
 	{
 		free(new_str);
-		ft_free_split(arr);	
+		ft_free_split(arr);
 		return (NULL);
 	}
-	i = 0;
-	while (arr && arr[i])
-	{
-		new_arr[i] = arr[i];
-		i++;
-	}
-	new_arr[i] = new_str;
-	new_arr[++i] = NULL;
-	ft_free_split(arr);
-	return (new_arr);
+	return (strdup_2d(new_arr, arr, new_str));
 }
