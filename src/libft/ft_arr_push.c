@@ -6,7 +6,7 @@
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 02:44:47 by aalemami          #+#    #+#             */
-/*   Updated: 2026/04/22 02:45:44 by aalemami         ###   ########.fr       */
+/*   Updated: 2026/04/22 14:00:33 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**ft_arr_push(char **arr, char *str)
 		free(new_str);
 		return (NULL);
 	}
-		i = 0;
+	i = 0;
 	while (arr && arr[i])
 	{
 		new_arr[i] = arr[i];
@@ -49,5 +49,6 @@ char	**ft_arr_push(char **arr, char *str)
 	}
 	new_arr[i] = new_str;
 	new_arr[++i] = NULL;
+	ft_free_split(arr);
 	return (new_arr);
 }
