@@ -13,7 +13,8 @@ LIBFT_FILES = \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-	ft_lstmap.c ft_free_split.c ft_strdup_2d.c ft_arr_push.c
+	ft_lstmap.c ft_free_split.c ft_strdup_2d.c ft_arr_push.c \
+	ft_str_isdigit.c
 
 PRINTF_DIR = src/printf/
 PRINTF_FILES = ft_print_char_2.c ft_print_char.c ft_printf.c

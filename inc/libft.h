@@ -58,6 +58,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_free_split(char **str);
 char	**ft_strdup_2d(const char **str);
 char	**ft_arr_push(char **arr, char *str);
+int		ft_str_isdigit(char *str);
 
 typedef struct s_list
 {
