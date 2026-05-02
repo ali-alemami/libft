@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 15:19:29 by aalemami          #+#    #+#             */
-/*   Updated: 2025/09/04 15:19:29 by aalemami         ###   ########.fr       */
+/*   Created: 2026/05/02 22:04:04 by aalemami          #+#    #+#             */
+/*   Updated: 2026/05/02 22:04:04 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 int	ft_atoi(const char *nptr)
 {
