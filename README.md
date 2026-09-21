@@ -2,7 +2,6 @@
 
 # libft
 
-[![Build Status](https://github.com/ali-alemami/libft/actions/workflows/build.yml/badge.svg)](https://github.com/ali-alemami/libft/actions)
 
 *Custom C Standard Library Implementation*
 
