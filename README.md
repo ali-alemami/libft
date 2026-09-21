@@ -1,64 +1,80 @@
-*This project has been created as part of the 42 curriculum by aalemami*
+*This project has been created as part of the 42 curriculum by aalemami.*
 
-# Libft
+# libft
 
 [![Build Status](https://github.com/ali-alemami/libft/actions/workflows/build.yml/badge.svg)](https://github.com/ali-alemami/libft/actions)
 
-*My very first own library*
+*Custom C Standard Library Implementation*
+
+---
 
 ## Description
-This project is created as part of the 42 curriculum. The aim is to create a C library called **libft**, which will be useful for future 42 projects.
 
-This library consists of 3 parts:
-1.  **Part 1 - Libc functions**: Reimplementation of standard C library functions. They have the same prototypes and behaviors as the originals (e.g., `strlen` becomes `ft_strlen`).
-2.  **Part 2 - Additional functions**: A set of useful functions that are either not included in libc or exist in a different form (e.g., `ft_strjoin`, `ft_split`).
-3.  **Part 3 - Linked Lists**: Functions to manipulate and manage linked lists.
-4.  **part 4 - ft_printf**: ft_printf was added to this project
+This project was created as part of the 42 curriculum. The goal is to build a custom C library called **libft**, providing reimplementations of standard C library functions alongside custom utility routines used in subsequent 42 projects.
+
+The library consists of four main components:
+1. **Part 1 - Libc Functions**: Reimplementations of standard C library functions (`ft_strlen`, `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_strlcpy`, `ft_strlcat`, `ft_toupper`, `ft_tolower`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_memchr`, `ft_memcmp`, `ft_strnstr`, `ft_atoi`, `ft_calloc`, `ft_strdup`).
+2. **Part 2 - Additional Functions**: Common string and utility functions (`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`, `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`).
+3. **Part 3 - Linked Lists**: Singly linked list manipulation utilities (`ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`).
+4. **Part 4 - ft_printf**: Integrated formatted output print engine.
+
+---
 
 ## Instructions
 
 ### Installation
-To download the library to your machine, follow these steps:
 
-1.  Open your terminal in your preferred directory.
-2.  Clone the repository:
-    ```bash
-	git clone <paste_your_ssh_link_here>
-	```
+Clone the repository:
 
-### How to Use
-To use this library in your own code, include the header file and link the library during compilation:
-
-```C
-#include "libft.h"
-
-int main(void)
-{
-    ft_putstr_fd("Hello 42!", 1);
-    return (0);
-}
+```bash
+git clone https://github.com/ali-alemami/libft.git
+cd libft
 ```
 
 ### Compilation
-The project includes a Makefile. You can compile the library using:
+
+Compile the static archive `libft.a` using `make`:
+
 ```bash
 make
 ```
 
-This will generate the libft.a static library file.
-
-Compile your program with:
-
-```Bash
-
-gcc main.c -L. -lft -o my_program
+Additional targets:
+```bash
+make clean   # Remove object files
+make fclean  # Remove object files and libft.a
+make re      # Rebuild from scratch
 ```
 
+### Usage
+
+Include the header file in your C source and link `libft.a`:
+
+```c
+#include "libft.h"
+
+int main(void)
+{
+    ft_putstr_fd("Hello 42!\n", 1);
+    return (0);
+}
+```
+
+Compile with:
+
+```bash
+cc main.c -L. -lft -o my_program
+```
+
+---
+
 ## Resources
-Man pages: Use man function_name (e.g., man strlen) to understand the original behavior.
 
-Makefiles: [[C Programming: Makefiles by Barry Brown - A great tutorial on how automation works](https://www.youtube.com/live/GExnnTaBELk?si=aYJHOSgV4ig30CG7)].
+- [Linux man pages](https://man7.org/linux/man-pages/) (e.g. `man 3 strlen`, `man 3 memset`)
+- [C Programming: Makefiles by Barry Brown](https://www.youtube.com/live/GExnnTaBELk?si=aYJHOSgV4ig30CG7)
 
-## License
+### AI Usage
 
-No license.
+AI tools were used for code review and syntax clarification regarding:
+- Edge-case handling in memory operations (`ft_memmove` overlap detection).
+- Makefile dependency rules and static library archiving (`ar rcs`).
